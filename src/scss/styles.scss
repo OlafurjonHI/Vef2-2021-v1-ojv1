@@ -1,0 +1,132 @@
+html,
+main,
+body,
+div,
+section,
+span {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: lightgray;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Lato', 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0;
+  word-break: break-word;
+}
+
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+
+$max-width: 60em;
+
+.header,
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section {
+  max-width: $max-width;
+  margin-bottom: 2em;
+  padding: 1em;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__card {
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      width: 49%;
+    }
+
+    @media (min-width: $laptop) {
+      width: 32%;
+    }
+
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1em;
+  }
+
+  &__imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__videoTitle {
+    margin-bottom: 0;
+  }
+
+  &__duration {
+    position: relative;
+    justify-self: flex-end;
+    text-align: right;
+    letter-spacing: 0.5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.1em 0.5em;
+    width: fit-content;
+    margin-top: -2em;
+    margin-right: 0.25em;
+  }
+
+  &__divider {
+    width: 50%;
+    margin: 0 auto;
+    border: 0;
+    border-bottom: 4px solid darkgray;
+  }
+}
+
+.video {
+  max-width: $max-width;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    video {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    margin: 0.5em 0;
+  }
+}

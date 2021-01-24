@@ -1,0 +1,15 @@
+<%- include('header') -%>
+
+  <main class="main">
+  <section class="video">
+    <div class="video__container">
+      <video src=<%= video.video %> controls></video>
+      <% if (video.description) { %>
+          <span class="video__description">  <%= video.description %></span>
+        <% } %>
+      <a href="/">Til Baka</a>
+    </div>
+  </section>
+  </main>
+
+<%- include('footer') -%>

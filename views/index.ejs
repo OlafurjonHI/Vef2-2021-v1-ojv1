@@ -1,0 +1,38 @@
+<%- include('header') -%>
+
+  <main class="main">
+    <%
+      if(videos){
+
+      videos.categories.forEach((cat)=> {
+
+    %>
+            <section class="<%cat.title%> section">
+              <h2 class="section__title"><%=cat.title%></h2>
+              <div class="section__container">
+           <% cat.videos.forEach((vid)=>{
+                let video = videos.videos[vid-1]    
+            %>
+              <a href="/<%=video.id%>" class="section__card">
+                <div class="section__imgContainer">
+                  <img class="section__image" src="<%=video.poster%>" alt="<%=video.description%>"/>
+                  <span class="section__duration"><%=convertToDuration(video.duration)%></span>
+                </div>
+                <div class="section__text">
+                  <h3 class="section__videoTitle"><%=video.title%></h3>
+                  <span class="section__created"><%= getAge(video.created)%></span>
+                  </div>
+                </a>
+        
+      <%  }) %>
+        </div>
+      </section>
+      <hr class="section__divider" />
+    <%})} else {%>
+      <span class="error">Failed to get videos</span>
+    <%}%>
+    
+    
+  </main>
+
+<%- include('footer') -%>
